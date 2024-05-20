@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c086b09-ccac-4b79-a2a0-5ca92983af24" name="Changes" comment="case7">
-      <change beforePath="$PROJECT_DIR$/Partie-2/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Partie-2/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Partie-2/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Partie-2/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,8 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -58,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716240406055</updated>
-      <workItem from="1716240407172" duration="213000" />
+      <workItem from="1716240407172" duration="375000" />
     </task>
     <servers />
   </component>

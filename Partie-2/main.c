@@ -83,12 +83,12 @@ int main() {
 
 
 
-            case 5:;
+            case 5:;   // Supprimer valeur dans une colonne
                 int ind;
                 ind= choose_col(CD);
                 supp_val(&CD->colonne[ind]);
                 break;
-            case 6:;
+            case 6:;    // Supprimer une colonne dans le cdataframe
             int indice;
             indice= choose_col(CD);
             if (indice!=CD->nb_colonne-1){
@@ -105,19 +105,19 @@ int main() {
 
 
 
-            case 7:;
+            case 7:;       //trier et afficer les valeurs d'une colonne au travers de l'index
                 int y;
                 y= choose_col(CD);
                 sort(&CD->colonne[y],CD->colonne[y].sort_dir);
 
                 print_col_by_index(&CD->colonne[y]);
                 break;
-            case 8:;
+            case 8:;        // compter le nombre d'occurrence d'une valeur dans la colonne
                 int nbcol;
                 nbcol=choose_col(CD);
                 occure(&(CD->colonne[nbcol]));
                 break;
-            case 9:
+            case 9:         // fermer le programme
                 sortie = 1;
                 break;
         }
