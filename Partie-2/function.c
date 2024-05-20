@@ -79,7 +79,7 @@ int choose_value(COLUMN *col){
 
 
 int insert_value(COLUMN *col, void *value){
-
+/// Fonction pour insérer une valeur dans une colonne.
     if (col->size== col->max_size){
         col->data=(COL_TYPE**) realloc(col->data,col->max_size+TAILLE_MAX);
         col->max_size+=TAILLE_MAX;
@@ -125,7 +125,7 @@ int insert_value(COLUMN *col, void *value){
 }
 
 void delete_column(COLUMN **col){
-
+///Fonction pour supprimer une colonne.
 
     (*col)->title=NULL;
     free((*col)->data);
@@ -170,7 +170,7 @@ void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
 
 }
 void print_col(COLUMN *col){
-
+/// Fonction pour afficher les colonnes du CDATA-frame
     char *str;
     int i;
     printf("|Titre : %s |\n",col->title);
@@ -185,6 +185,7 @@ void print_col(COLUMN *col){
 
 
 COLUMN * choisir_type_column(char * str){
+    /// Fonction pour choisir le type d'une colonne.
     COLUMN * colonne;
     CDATAFRAME lol;
 
@@ -238,6 +239,7 @@ COLUMN * choisir_type_column(char * str){
 }
 
 void supp_val(COLUMN *col){
+    ///Fonction pour supprimer une valeur d'une colonne.
     printf("Choisir la valeur a suppimer :\n");
     int i=0;
     switch(col->column_type){
@@ -444,6 +446,7 @@ void print_col_by_index(COLUMN*col){
 }
 
 void occure(COLUMN *col) {
+    /// Fonction pour chercher le nombre d'occurences d'une valeur dans une colonne.
     int i, occurence = 0, size;
     int tab[TAILLE_MAX];
     size = col->size;
