@@ -31,6 +31,13 @@ void sort(COLUMN* ,int );
 int Partition(COLUMN* , int , int );
 void Quicksort(COLUMN* , int , int );
 void print_col_by_index(COLUMN*);
+void occure(COLUMN *col);
+
+typedef struct {
+    ENUM_TYPE type;
+    COL_TYPE value;
+} variable;
+
 
 
 
