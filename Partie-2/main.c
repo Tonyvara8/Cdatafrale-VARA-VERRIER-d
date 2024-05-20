@@ -105,7 +105,12 @@ int main() {
                 printf("BANANA\n");
                 print_col_by_index(&CD->colonne[0]);
                 break;
-            case 8:
+            case 8:;
+                int nbcol;
+                nbcol=choose_col(CD);
+                occure(&(CD->colonne[nbcol]));
+                break;
+            case 9:
                 sortie = 1;
                 break;
         }
