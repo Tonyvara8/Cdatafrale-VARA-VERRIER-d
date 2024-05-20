@@ -559,5 +559,128 @@ void occure(COLUMN *col){
             break;
     }
 }
+void occure(COLUMN *col) {
+    /// Fonction pour chercher le nombre d'occurences d'une valeur dans une colonne.
+    int i, occurence = 0, size;
+    int tab[TAILLE_MAX];
+    size = col->size;
+    variable *valeur = (variable *)malloc(sizeof(variable));
+    valeur->type = col->column_type;
+
+    switch (valeur->type) {
+        case INT:
+            printf("Saisir une valeur entiere : ");
+            scanf("%d", &valeur->value.int_value);
+            break;
+        case STRING:
+            printf("Saisir une valeur de type string : ");
+            scanf("%s", valeur->value.string_value);
+            break;
+        case FLOAT:
+            printf("Saisir une valeur flottante : ");
+            scanf("%f", &valeur->value.float_value);
+            break;
+        case CHAR:
+            printf("Saisir une valeur de type caractere : ");
+            scanf(" %c", &valeur->value.char_value);  // Notez l'espace avant %c pour consommer le caractère de nouvelle ligne restant
+            break;
+        case UINT:
+            printf("Saisir une valeur entiere : ");
+            scanf("%u", &valeur->value.uint_value);
+            break;
+        case DOUBLE:
+            printf("Saisir une valeur double : ");
+            scanf("%lf", &valeur->value.double_value);  // Utilisez %lf pour les doubles
+            break;
+    }
+
+    for (i = 0; i < size; i++) {
+        switch (valeur->type) {
+            case INT:
+                if (col->data[i]->int_value == valeur->value.int_value) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+            case STRING:
+                if (strcmp(col->data[i]->string_value, valeur->value.string_value) == 0) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+            case FLOAT:
+                if (col->data[i]->float_value == valeur->value.float_value) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+            case CHAR:
+                if (col->data[i]->char_value == valeur->value.char_value) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+            case UINT:
+                if (col->data[i]->uint_value == valeur->value.uint_value) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+            case DOUBLE:
+                if (col->data[i]->double_value == valeur->value.double_value) {
+                    tab[occurence] = i;
+                    occurence++;
+                }
+                break;
+        }
+    }
+
+    switch (valeur->type) {
+        case INT:
+            printf("La valeur %d apparait %d fois aux positions ", valeur->value.int_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf("%d ", tab[i]);
+            }
+            printf("\n");
+            break;
+        case STRING:
+            printf("La valeur %s apparait %d fois aux positions ", valeur->value.string_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf("%d ", tab[i]);
+            }
+            printf("\n");
+            break;
+        case FLOAT:
+            printf("La valeur %f apparait %d fois aux positions ", valeur->value.float_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf("%d ", tab[i]);
+            }
+            printf("\n");
+            break;
+        case CHAR:
+            printf("La valeur %c apparait %d fois aux positions ", valeur->value.char_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf("%d ", tab[i]);
+            }
+            printf("\n");
+            break;
+        case UINT:
+            printf("La valeur %u apparait %d fois aux positions ", valeur->value.uint_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf("%d ", tab[i]);
+            }
+            printf("\n");
+            break;
+        case DOUBLE:
+            printf("La valeur %lf apparait %d fois aux positions ", valeur->value.double_value, occurence);
+            for (i = 0; i < occurence; i++) {
+                printf(" [%d]", tab[i]);
+            }
+            printf(".\n");
+            break;
+    }
+
+    free(valeur);
+}
 =======
 >>>>>>> parent of 7196036 (case7)
