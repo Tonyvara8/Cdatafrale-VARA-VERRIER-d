@@ -16,7 +16,7 @@ int main() {
         printf("5) Supprimer une valeur de la colonne\n");
         printf("6) Supprimer une colonne\n");
         printf("7) Trier la colonne et l'afficher\n");
-
+        printf("8) Trouver les occurences d'une valeur dans le tableau\n");
 
         printf("8) Quitter \n");
         scanf("%d",&temp);
