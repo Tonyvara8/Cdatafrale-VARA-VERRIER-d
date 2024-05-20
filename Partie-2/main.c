@@ -13,8 +13,6 @@ int main() {
         printf("2) Creer et Remplir une colonne\n");
         printf("3) Afficher colonne\n");
         printf("4) Inserer valeur dans une colonne\n");
-        printf("5) Supprimer une valeur de la colonne\n");
-        printf("6) Supprimer une colonne\n");
 
 
         printf("8) Quitter \n");
@@ -70,40 +68,11 @@ int main() {
             case 4:;       // Ajouter une valeur
 
 
-                int nb_col;
-                printf("Sélectionner numéros de la colonne\n",CD->nb_colonne);
+            int nb_col;
+            printf("Sélectionner numéros de la colonne\n",CD->nb_colonne);
                 //scanf("%d",nb_col);
                 choose_value(&(CD->colonne[0]));
                 printf("Valeur ajoute !");
-                break;
-
-
-
-            case 5:;
-                int ind;
-                ind= choose_col(CD);
-                supp_val(&CD->colonne[ind]);
-                break;
-            case 6:;
-                int indice;
-                indice= choose_col(CD);
-                for(i=indice;i<CD->nb_colonne-1;i++){
-                    CD->colonne[i]=CD->colonne[i+1];
-                }
-                for (j=0;j<CD->nb_colonne;j++){
-                    print_col(&(CD->colonne[j]));
-                    printf("\n");}
-                delete_column(&CD->colonne[CD->nb_colonne-1]);
-                CD->nb_colonne--;
-                break;
-
-
-
-
-            case 7:;
-                sort(&CD->colonne[0],CD->colonne[0].sort_dir);
-                printf("BANANA\n");
-                print_col_by_index(&CD->colonne[0]);
                 break;
             case 8:
                 sortie = 1;

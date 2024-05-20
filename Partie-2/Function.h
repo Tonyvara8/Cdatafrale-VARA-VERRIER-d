@@ -30,10 +30,7 @@ typedef struct{
     unsigned int max_size; //physical size
     ENUM_TYPE column_type;
     COL_TYPE **data; // array of pointers to stored data
-    unsigned long long int *index;
-    int valid_index;
-    int sort_dir;
-
+    unsigned long long int *index; // array of integers
 }COLUMN;
 
 typedef struct{
@@ -51,13 +48,10 @@ int choose_value(COLUMN *);
 void delete_column(COLUMN **col);
 void convert_value(COLUMN *col, unsigned long long int i, char *str, int size);
 void print_col(COLUMN *);
-void supp_val(COLUMN *);
 COLUMN * choisir_type_column(char * );
-int choose_col(CDATAFRAME*);
-void sort(COLUMN* ,int );
-int Partition(COLUMN* , int , int );
-void Quicksort(COLUMN* , int , int );
-void print_col_by_index(COLUMN*);
+
+
+
 
 typedef struct {
     ENUM_TYPE type;
