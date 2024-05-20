@@ -1,5 +1,5 @@
 
-#include "Function.h"
+#include "cdataframe.h"
 
 
 
@@ -13,6 +13,9 @@ int main() {
         printf("2) Creer et Remplir une colonne\n");
         printf("3) Afficher colonne\n");
         printf("4) Inserer valeur dans une colonne\n");
+        printf("5) Supprimer une valeur de la colonne\n");
+        printf("6) Supprimer une colonne\n");
+        printf("7) Trier la colonne et l'afficher\n");
 
 
         printf("8) Quitter \n");
@@ -69,10 +72,45 @@ int main() {
 
 
             int nb_col;
-            printf("Sélectionner numéros de la colonne\n",CD->nb_colonne);
-                //scanf("%d",nb_col);
-                choose_value(&(CD->colonne[0]));
-                printf("Valeur ajoute !");
+                nb_col= choose_col(CD);
+                choose_value(&(CD->colonne[nb_col]));
+                printf("Valeur ajoute !\n");
+                if (CD->colonne[nb_col].valid_index==1){
+                    CD->colonne[nb_col].valid_index=-1;
+
+                }
+                break;
+
+
+
+            case 5:;
+                int ind;
+                ind= choose_col(CD);
+                supp_val(&CD->colonne[ind]);
+                break;
+            case 6:;
+            int indice;
+            indice= choose_col(CD);
+            if (indice!=CD->nb_colonne-1){
+            for(i=indice;i<CD->nb_colonne-1;i++){
+                CD->colonne[i]=CD->colonne[i+1];
+
+            }}
+
+                print_col(&CD->colonne[CD->nb_colonne-1]);
+            delete_column(&CD->colonne[CD->nb_colonne-1]);
+            CD->nb_colonne--;
+            break;
+
+
+
+
+            case 7:;
+                int y;
+                y= choose_col(CD);
+                sort(&CD->colonne[y],CD->colonne[y].sort_dir);
+
+                print_col_by_index(&CD->colonne[y]);
                 break;
             case 8:
                 sortie = 1;
