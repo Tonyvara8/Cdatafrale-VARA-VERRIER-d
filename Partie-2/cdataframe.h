@@ -1,7 +1,3 @@
-//
-// Created by tonyv on 16/05/2024.
-//
-
 #ifndef FUNCTION_H
 #define FUNCTION_H
 #include <stdlib.h>
