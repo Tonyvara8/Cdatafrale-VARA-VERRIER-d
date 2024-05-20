@@ -8,7 +8,7 @@
 
 
 void delete_column(COLUMN **col){
-
+///Supprimer une colonne.
 
     (*col)->title=NULL;
     free((*col)->data);
@@ -20,7 +20,7 @@ void delete_column(COLUMN **col){
 
 
 void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
-
+///Passer une valeur de type quelconque en STR pour pouvoir l'afficher simplement.
     switch(col->column_type){
 
         case INT:
@@ -53,7 +53,7 @@ void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
 
 }
 void print_col(COLUMN *col){
-
+///Afficher les colonnes.
     char *str;
     int i;
     printf("|Titre : %s |\n",col->title);
@@ -68,6 +68,7 @@ void print_col(COLUMN *col){
 
 
 COLUMN * choisir_type_column(char * str){
+    ///Choisir le type de données d'une colonne.
     COLUMN * colonne;
     CDATAFRAME lol;
 
@@ -121,6 +122,7 @@ COLUMN * choisir_type_column(char * str){
 }
 
 void supp_val(COLUMN *col){
+    ///Supprimer une valeur d'une colonne.
     printf("Choisir la valeur a suppimer :\n");
     int i=0;
     switch(col->column_type){
@@ -223,7 +225,7 @@ void supp_val(COLUMN *col){
 }
 
 int choose_col(CDATAFRAME * CD){
-
+///Choisir une colonne sur laquelle agir.
 
     char title[25];
     int t=0,ve;
