@@ -1,14 +1,13 @@
 #include "Function.h"
 
 
-COLUMN *create_column(ENUM_TYPE type, char *title){
+COLUMN *create_column(ENUM_TYPE type, char *title){ ///creation d'une colonne
     COLUMN * colonne;
     colonne=(COLUMN*) malloc(sizeof(COLUMN));
-    colonne->title=(char *) malloc(sizeof(char *));
+    colonne->title=(char *) malloc(sizeof(char *)); ///allocation de l'espace memoire au titre de la colonne
     colonne->title=title;
 
     colonne->column_type=type;
-    colonne->data=(COL_TYPE**) malloc(sizeof(COL_TYPE**)*TAILLE_MAX);
     colonne->data=(COL_TYPE**) malloc(sizeof(COL_TYPE**)*TAILLE_MAX);   ///allocation de l'espace des valeurs
     colonne->max_size=TAILLE_MAX;
     colonne->size=0;
