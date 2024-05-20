@@ -343,7 +343,7 @@ int choose_col(CDATAFRAME * CD){
 
     char title[25];
     int t=0,ve;
-    printf("Entrer le nom de la colonne dont vous voulez supprimer une valeur : \n");
+    printf("Entrer le nom de la colonne sur laquelle vous voulez agir  : \n");
     scanf("%s",title);
     for(t=0;t<CD->nb_colonne;t++){
 
