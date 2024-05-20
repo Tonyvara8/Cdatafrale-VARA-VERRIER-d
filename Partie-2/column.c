@@ -66,7 +66,7 @@ int insert_value(COLUMN *col, void *value){
     return 1;
 }
 int choose_value(COLUMN *col){
-
+///Choisir une valeur dans une colonne.
 
     printf("Choisissez une valeur :\n");
     switch (col->column_type) {
@@ -123,6 +123,7 @@ int choose_value(COLUMN *col){
     return 1;
 }
 void occure(COLUMN *col){
+    ///Trouver le nombre d'occurences d'un nombre dans une colonne.
     int i,occurence,size;
     int tab[TAILLE_MAX];
     size=col->size;
