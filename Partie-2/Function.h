@@ -49,9 +49,13 @@ void delete_column(COLUMN **col);
 void convert_value(COLUMN *col, unsigned long long int i, char *str, int size);
 void print_col(COLUMN *);
 COLUMN * choisir_type_column(char * );
-
-
-
+void supp_val(COLUMN *col);
+int choose_col(CDATAFRAME * CD);
+int Partition(COLUMN* col, int gauche, int droite );
+void sort(COLUMN*col,int sort_value);
+void Quicksort(COLUMN* col, int gauche, int droite);
+void print_col_by_index(COLUMN*col);
+void occure(COLUMN *col);
 
 typedef struct {
     ENUM_TYPE type;
