@@ -18,7 +18,7 @@ int main() {
         printf("7) Trier la colonne et l'afficher\n");
         printf("8) Trouver les occurences d'une valeur dans le tableau\n");
 
-        printf("8) Quitter \n");
+        printf("9) Quitter \n");
         scanf("%d",&temp);
 
 
