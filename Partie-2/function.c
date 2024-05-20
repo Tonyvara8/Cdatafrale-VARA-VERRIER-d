@@ -1,14 +1,14 @@
 #include "Function.h"
 
 
-COLUMN *create_column(ENUM_TYPE type, char *title){
+COLUMN *create_column(ENUM_TYPE type, char *title){ ///creation d'une colonne
     COLUMN * colonne;
     colonne=(COLUMN*) malloc(sizeof(COLUMN));
-    colonne->title=(char *) malloc(sizeof(char *));
+    colonne->title=(char *) malloc(sizeof(char *)); ///allocation de l'espace memoire au titre de la colonne
     colonne->title=title;
 
     colonne->column_type=type;
-    colonne->data=(COL_TYPE**) malloc(sizeof(COL_TYPE**)*TAILLE_MAX);
+    colonne->data=(COL_TYPE**) malloc(sizeof(COL_TYPE**)*TAILLE_MAX);   ///allocation de l'espace des valeurs
     colonne->max_size=TAILLE_MAX;
     colonne->size=0;
     colonne->index=NULL;
@@ -77,7 +77,7 @@ int choose_value(COLUMN *col){
 
 
 int insert_value(COLUMN *col, void *value){
-
+///insertion de valeures en fonction du type de la colonne.
     if (col->size== col->max_size){
         col->data=(COL_TYPE**) realloc(col->data,col->max_size+TAILLE_MAX);
         col->max_size+=TAILLE_MAX;
@@ -85,7 +85,7 @@ int insert_value(COLUMN *col, void *value){
 
     switch(col->column_type){
 
-        case INT:
+        case INT:       ///colonne de type INT, alors je peux entrer des entiers
             col->data[col->size] = (int*) malloc (sizeof(int));
             *((int*)col->data[col->size])= *((int*)value);
             break;
@@ -125,24 +125,24 @@ int insert_value(COLUMN *col, void *value){
 void delete_column(COLUMN **col){
 
 
-    (*col)->title=NULL;
-    free((*col)->data);
-    (*col)->data=NULL;
-    free(*col);
+    (*col)->title=NULL;         ///supprime le titre d'une colonne
+    (*col)->data=NULL;          ///supprime les datas des colonnes
+    free((*col)->data); ///libère la mémoire allouée aux données
+    free(*col);         ///idem pour la colonne
     col=NULL;
 
 }
 
 
 void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
-
+///fonction pour creer transformer les valeurs de la colonne en chaines de caractères dans un but d'affichage.
     switch(col->column_type){
 
-        case INT:
-            snprintf(str, size, "%d", *((int*)col->data[i]));
+        case INT:   ///si la colonne est de type INT
+            snprintf(str, size, "%d", *((int*)col->data[i]));   ///On convertie cette valeur en STR
             break;
         case STRING:
-            snprintf(str, size, "%s", (char**)col->data[i]);
+            snprintf(str, size, "%s", (char**)col->data[i]);    ///idem a chaque fois
             break;
         case   FLOAT:
             snprintf(str, size, "%f", *((float *)col->data[i]));
@@ -167,22 +167,22 @@ void convert_value(COLUMN *col, unsigned long long int i, char *str, int size){
 
 
 }
-void print_col(COLUMN *col){
+void print_col(COLUMN *col){ /// fonction permettant d'afficher une colonne.
 
     char *str;
     int i;
     printf("|Titre : %s |\n",col->title);
     for (i=0;i<col->size;i++){
-        str=(char*) malloc(sizeof(char*));
+        str=(char*) malloc(sizeof(char*));  ///definition d'un str comme tableau dynamique.
         convert_value(col,i,str,150);
-        printf("[%d]|\t%s\t|\n",i,str);
+        printf("[%d]|\t%s\t|\n",i,str);     /// affichage sous forme position->valeur->|. Ou chaque -> est une tabulation.
         str=NULL;
     }
 
 }
 
 
-COLUMN * choisir_type_column(char * str){
+COLUMN * choisir_type_column(char * str){   ///Choisir le type de la colonne.
     COLUMN * colonne;
     CDATAFRAME lol;
 
@@ -198,7 +198,7 @@ COLUMN * choisir_type_column(char * str){
     printf("5-> Colonne de floats \n");
     printf("6-> Colonne de double \n");
 
-    scanf("%d",&a);
+    scanf("%d",&a); ///Creation de colonne en fonction de la saisie utilisateur. (Via switch case)
     switch(a){
         case 1:
             colonne=create_column(INT,str);
