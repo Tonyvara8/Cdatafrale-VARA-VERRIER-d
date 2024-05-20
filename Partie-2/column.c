@@ -2,6 +2,7 @@
 #include "column.h"
 
 COLUMN *create_column(ENUM_TYPE type, char *title){
+    /// Création de colonne.
     COLUMN * colonne;
     colonne=(COLUMN*) malloc(sizeof(COLUMN));
     colonne->title=(char *) malloc(sizeof(char *));
@@ -20,7 +21,7 @@ COLUMN *create_column(ENUM_TYPE type, char *title){
 
 }
 int insert_value(COLUMN *col, void *value){
-
+    ///Entrer une valeur dans une colonne.
     if (col->size== col->max_size){
         col->data=(COL_TYPE**) realloc(col->data,col->max_size+TAILLE_MAX);
         col->max_size+=TAILLE_MAX;
@@ -65,7 +66,7 @@ int insert_value(COLUMN *col, void *value){
     return 1;
 }
 int choose_value(COLUMN *col){
-
+///Choisir une valeur dans une colonne.
 
     printf("Choisissez une valeur :\n");
     switch (col->column_type) {
@@ -122,6 +123,7 @@ int choose_value(COLUMN *col){
     return 1;
 }
 void occure(COLUMN *col){
+    ///Trouver le nombre d'occurences d'un nombre dans une colonne.
     int i,occurence,size;
     int tab[TAILLE_MAX];
     size=col->size;
