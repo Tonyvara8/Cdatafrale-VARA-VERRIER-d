@@ -15,9 +15,11 @@ int main() {
         printf("4) Inserer valeur dans une colonne\n");
         printf("5) Supprimer une valeur de la colonne\n");
         printf("6) Supprimer une colonne\n");
+        printf("7) Tri par insertion d'une colonne.\n");
+        printf("8) Trouver les occurences d'une valeur dans le tableau\n");
 
 
-        printf("8) Quitter \n");
+        printf("9) Quitter \n");
         scanf("%d",&temp);
 
 
