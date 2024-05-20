@@ -1,7 +1,3 @@
-//
-// Created by tonyv on 20/05/2024.
-//
-
 #ifndef PROJET_PART2_COLUMN_H
 #define PROJET_PART2_COLUMN_H
 #include "cdataframe.h"
