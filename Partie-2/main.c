@@ -112,7 +112,12 @@ int main() {
 
                 print_col_by_index(&CD->colonne[y]);
                 break;
-            case 8:
+            case 8:;
+                int nbcol;
+                nbcol=choose_col(CD);
+                occure(&(CD->colonne[nbcol]));
+                break;
+            case 9:
                 sortie = 1;
                 break;
         }
