@@ -13,3 +13,4 @@ Utiliser le main.c .
 Les instructions individuelles de chaque fonctions s'afficheront dans la console.
 
 Corentin VERRIER - Tony VARA -> GRP-D
+lien vers github : https://github.com/Tonyvara8/Cdatafrale-VARA-VERRIER-d
